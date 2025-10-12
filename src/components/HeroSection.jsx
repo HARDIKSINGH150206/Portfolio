@@ -14,7 +14,7 @@ export const HeroSection = () => {
               <img
                 src="/profile.png"
                 alt="Hardik Singh"
-                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/20 shadow-2xl hover:border-primary/40 transition-all duration-300 hover:scale-105"
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary/20 shadow-2xl hover:border-primary/40 transition-all duration-300 hover:scale-105"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
             </div>
