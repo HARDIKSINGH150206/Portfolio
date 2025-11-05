@@ -1,4 +1,5 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { GlareCard } from "./ui/GlareCard";
 
 const projects = [
   {
@@ -48,9 +49,9 @@ export const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div
+            <GlareCard
               key={project.id}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="w-full h-full p-0 rounded-lg overflow-hidden shadow-xs"
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -60,17 +61,18 @@ export const ProjectsSection = () => {
                 />
               </div>
 
-              <div className="p-6">
+              {/* 🎯 FIX 1: Ensure text is visible on dark card background */}
+              <div className="p-6 text-white">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                    <span key={tag} className="px-2 py-1 text-xs font-medium border rounded-full bg-gray-700 text-white">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-gray-300 text-sm mb-4">
                   {project.description}
                 </p>
                 <div className="flex justify-between items-center">
@@ -78,21 +80,21 @@ export const ProjectsSection = () => {
                     <a
                       href={project.demoUrl}
                       target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      className="text-indigo-400 hover:text-primary transition-colors duration-300"
                     >
                       <ExternalLink size={20} />
                     </a>
                     <a
                       href={project.githubUrl}
                       target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      className="text-indigo-400 hover:text-primary transition-colors duration-300"
                     >
                       <Github size={20} />
                     </a>
                   </div>
                 </div>
               </div>
-            </div>
+            </GlareCard>
           ))}
         </div>
 
